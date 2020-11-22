@@ -98,7 +98,7 @@
         let bigImages = overlayContainer.getElementsByTagName("img");
 
         console.log(bigImages);
-        if (bigImages.length > 0) {
+        if (bigImages.length > 0) {                 // clear out any old big image
         while (bigImages.length > 0) {
             overlayContainer.removeChild(bigImages[0]);
         }
@@ -107,6 +107,8 @@
         document.getElementById("overlay").style.display = "block";
         setTimeout(overlayOn, 100);
         overlayContainer.appendChild(renderNewPhoto);
+        renderNewPhoto.style.maxHeight = "100%";
+        renderNewPhoto.style.maxWidth = "100%";
         renderNewPhoto.style.objectFit = "contain";
         renderNewPhoto.style.opacity = "100%";
 
