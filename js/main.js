@@ -66,7 +66,7 @@
             sidebar.style.fontSize = "smaller";
             showTxt = true;
         } else {
-            console.log("hej")
+            console.log("I hope you have a great day.")
             sidebar.style.fontSize = "0";
             showTxt = false;
         };
@@ -97,7 +97,6 @@
         let overlayContainer = document.getElementsByClassName("overlayImage")[0];
         let bigImages = overlayContainer.getElementsByTagName("img");
 
-        console.log(bigImages);
         if (bigImages.length > 0) {                 // clear out any old big image
         while (bigImages.length > 0) {
             overlayContainer.removeChild(bigImages[0]);
