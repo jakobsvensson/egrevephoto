@@ -104,6 +104,9 @@
             overlayContainer.removeChild(bigImages[0]);
         }
     }
+        renderNewPhoto.onload = function() {
+            renderNewPhoto.style.opacity = "100%";
+        }
         renderNewPhoto.src = currentPhotoIndex;
         document.getElementById("overlay").style.display = "block";
         setTimeout(overlayOn, 100);
@@ -111,10 +114,9 @@
         renderNewPhoto.style.maxHeight = "100%";
         renderNewPhoto.style.maxWidth = "100%";
         renderNewPhoto.style.objectFit = "contain";
-        renderNewPhoto.style.opacity = "100%";
+        
 
     }
-
 
     let exitBtnFunction = function() {
         exitBtn.addEventListener("click", function (event) {                        //the "close" button.
