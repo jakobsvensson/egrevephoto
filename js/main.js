@@ -37,7 +37,9 @@
             exitBtn.style.fontSize = "smaller"; 
         for (let i = 0; i < chosenlist.length; i++) {               //generates img boxes.
             imageList[i] = new Image();
-            imageList[i].id = chosenlist[i];
+            imageList[i].onload = function() {
+                imageList[i].id = chosenlist[i];
+            };
             imageList[i].src = chosenlist[i];
             imageList[i].addEventListener("click", enlargePhoto);
             galleryview.appendChild(imageList[i]);
