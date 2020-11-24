@@ -7,11 +7,31 @@
     const exitBtn = document.getElementsByClassName('exitBtn')[0];
     const landscapemenu = document.getElementsByClassName('landscapemenu')[0];
     const portraitmenu = document.getElementsByClassName('portraitmenu')[0];
+    const urbanmenu = document.getElementsByClassName('urbanmenu')[0];
+    const romanmenu = document.getElementsByClassName('romanmenu')[0];
 
-    let landscapelistMed = ["images/landscapes/lmed1.jpg", "images/landscapes/lmed2.jpg"];
-    let portraitlistMed = ["images/portraits/pmed1.jpg", "images/portraits/pmed2.jpg", "images/portraits/pmed3.jpg", "images/portraits/pmed4.jpg"];
-    let landscapelistBig = ["images/landscapes/lbig1.jpg", "images/landscapes/lbig2.jpg"];
-    let portraitlistBig = ["images/portraits/pbig1.jpg", "images/portraits/pbig2.jpg", "images/portraits/pbig3.jpg", "images/portraits/pbig4.jpg"];
+    let imageUrl;
+    let landscapelistMed = [];
+    let portraitlistMed = [];
+    let urbanlistMed = [];
+    let romanlistMed = [];
+
+    for (let i = 1; i < 23; i++) {
+        imageUrl = "images/portraits/pmed" + i + ".jpg";
+        portraitlistMed.push(imageUrl)
+    }
+    for (let i = 1; i < 13; i++) {
+        imageUrl = "images/landscapes/lmed" + i + ".jpg";
+        landscapelistMed.push(imageUrl)
+    }
+    for (let i = 1; i < 6; i++) {
+        imageUrl = "images/urban/umed" + i + ".jpg";
+        urbanlistMed.push(imageUrl)
+    }
+    for (let i = 1; i < 7; i++) {
+        imageUrl = "images/roman/rmed" + i + ".jpg";
+        romanlistMed.push(imageUrl)
+    }
 
     function generategallery(menuchoice) {
         let chosenlist;                      
@@ -19,7 +39,9 @@
         let galleryview = document.getElementsByClassName('galleryview')[0];        //the div where image gallery will be shown
 
         landscapemenu.style.opacity = "0%";
-        portraitmenu.style.opacity = "0%";                          // fadeout menuchoice, THEN remove divs
+        portraitmenu.style.opacity = "0%";
+        urbanmenu.style.opacity = "0%"; 
+        romanmenu.style.opacity = "0%";                           // fadeout menuchoice, THEN remove divs
         setTimeout(showGalleryBoxes, 800);
 
         switch (menuchoice) {
@@ -29,11 +51,19 @@
             case "portrait":
                 chosenlist = portraitlistMed;
                 break;
+            case "urban":
+                chosenlist = urbanlistMed;
+                break;
+            case "roman":
+                chosenlist = romanlistMed;
+                break;
         }
 
         function showGalleryBoxes() {
             landscapemenu.style.display = "none";               // remove menuchoice divs
-            portraitmenu.style.display = "none";                    
+            portraitmenu.style.display = "none";
+            urbanmenu.style.display = "none";
+            romanmenu.style.display = "none";                   
             exitBtn.style.fontSize = "smaller"; 
         for (let i = 0; i < chosenlist.length; i++) {               //generates img boxes.
             imageList[i] = new Image();
@@ -60,6 +90,12 @@
     });
     portraitmenu.addEventListener("click", function(event) {
         generategallery("portrait");
+    });
+    urbanmenu.addEventListener("click", function (event) {
+        generategallery("urban");
+    });
+    romanmenu.addEventListener("click", function (event) {
+        generategallery("roman");
     });
     sitelogo.addEventListener("click", sidebarFunc);
 
@@ -137,10 +173,14 @@
             }
             landscapemenu.style.display = "block";
             portraitmenu.style.display = "block";
+            urbanmenu.style.display = "block";
+            romanmenu.style.display = "block";
             setTimeout(showMenuChoices, 200);
             function showMenuChoices (){
             landscapemenu.style.opacity = "100%";
             portraitmenu.style.opacity = "100%";
+            urbanmenu.style.opacity = "100%";
+            romanmenu.style.opacity = "100%";
 
             }                    
         };

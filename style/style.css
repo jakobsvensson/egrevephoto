@@ -136,6 +136,16 @@ html, body {
     background-image: url("../images/landscapesquare.jpg");
 }
 
+.urbanmenu {
+    background-size: cover;
+    background-image: url("../images/urbansquare.jpg");
+}
+
+.romanmenu {
+    background-size: cover;
+    background-image: url("../images/romansquare.jpg");
+}
+
 .sidebar {
     margin-top: 2%;
     margin-left: 5%;
