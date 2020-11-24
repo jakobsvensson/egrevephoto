@@ -68,9 +68,12 @@
         for (let i = 0; i < chosenlist.length; i++) {               //generates img boxes.
             imageList[i] = new Image();
             imageList[i].id = chosenlist[i];
-            imageList[i].onload = function() {
+            // imageList[i].onload = function() {
+            //     imageList[i].style.opacity = "100%";
+            // };
+            imageList[i].addEventListener("load", function () {
                 imageList[i].style.opacity = "100%";
-            };
+            });
             imageList[i].src = chosenlist[i];
             imageList[i].addEventListener("click", enlargePhoto);
             galleryview.appendChild(imageList[i]);
