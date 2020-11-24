@@ -68,10 +68,7 @@
         for (let i = 0; i < chosenlist.length; i++) {               //generates img boxes.
             imageList[i] = new Image();
             imageList[i].id = chosenlist[i];
-            // imageList[i].onload = function() {
-            //     imageList[i].style.opacity = "100%";
-            // };
-            imageList[i].addEventListener("load", function () {
+            imageList[i].addEventListener("load", function () {     //trying out onload with event listen instead..
                 imageList[i].style.opacity = "100%";
             });
             imageList[i].src = chosenlist[i];
