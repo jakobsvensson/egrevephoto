@@ -75,15 +75,15 @@
             imageList[i].addEventListener("click", enlargePhoto);
             galleryview.appendChild(imageList[i]);
         }
-        setTimeout(galleryBoxOpacityUp, 200);
+        //setTimeout(galleryBoxOpacityUp, 200);
         exitBtnFunction();
     }
-        let galleryBoxOpacityUp = function () {                         //opacity increase for gallery boxes
-            let galleryImg = document.getElementsByTagName("img");
-            for (let i = 0; i < galleryImg.length; i++) {
-                galleryImg[i].style.opacity = "100%";
-            }
-        }
+        // let galleryBoxOpacityUp = function () {                         //opacity increase for gallery boxes
+        //     let galleryImg = document.getElementsByTagName("img");
+        //     for (let i = 0; i < galleryImg.length; i++) {
+        //         galleryImg[i].style.opacity = "100%";
+        //     }
+        // }
     };
 
     landscapemenu.addEventListener("click", function(event) {
