@@ -69,6 +69,7 @@
             imageList[i] = new Image();
             imageList[i].onload = function() {
                 imageList[i].id = chosenlist[i];
+                imageList[i].style.opacity = "100%";
             };
             imageList[i].src = chosenlist[i];
             imageList[i].addEventListener("click", enlargePhoto);
